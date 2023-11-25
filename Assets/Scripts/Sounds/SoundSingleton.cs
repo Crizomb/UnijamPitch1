@@ -10,8 +10,11 @@ public class SoundSingleton : MonoBehaviour
     [SerializeField] private AudioClip GameMusic;
 
     [Header("Gameplay Sounds")]
-    [SerializeField] public AudioClip JumpSound;
-    [SerializeField] private AudioClip MoveSound;
+    [SerializeField] public AudioClip LiquidJumpSound;
+    [SerializeField] public AudioClip SolidJumpSound;
+    [SerializeField] private AudioClip ToLiquidSound;
+    [SerializeField] private AudioClip ToSolidSound;
+    [SerializeField] private AudioClip ToGazSound;
 
     [Header("UI Sounds")]
     [SerializeField] private AudioClip ClickSound;
@@ -48,15 +51,30 @@ public class SoundSingleton : MonoBehaviour
 
     #region Sounds
 
-    public void PlayJump()
+    public void PlayLiquidJump()
     {
-        SoundManager.Instance.PlaySound(JumpSound);
+        SoundManager.Instance.PlaySound(LiquidJumpSound);
     }
-    
-    public void PlayMove()
+
+    public void PlaySolidJump()
     {
-        SoundManager.Instance.PlaySound(MoveSound);
+        SoundManager.Instance.PlaySound(SolidJumpSound);
     }
+
+    public void PlayLiquidTransition()
+    {
+        SoundManager.Instance.PlaySound(ToLiquidSound);
+    }
+
+    public void PlaySolidTransition()
+    {
+        SoundManager.Instance.PlaySound(ToSolidSound);
+    }
+
+    public void PlayGazTransition()
+    {
+        SoundManager.Instance.PlaySound(ToGazSound);
+    }    
     
     public void PlayClick()
     {

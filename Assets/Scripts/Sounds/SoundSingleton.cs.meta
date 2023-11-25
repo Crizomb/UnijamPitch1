@@ -3,7 +3,17 @@ guid: b5d016ef9295b334db39e982e98dd87a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MenuMusic: {fileID: 8300000, guid: 32d02078ae1cfbf4a9f81bc1e76bfe09, type: 3}
+  - GameMusic: {fileID: 8300000, guid: 7522077c5e9b13543afcbee611808e12, type: 3}
+  - LiquidJumpSound: {fileID: 8300000, guid: 6c8318b219a80ee42beb16c9920374e0, type: 3}
+  - SolidJumpSound: {fileID: 8300000, guid: c8900a1999d097b429215aed72eb0cc2, type: 3}
+  - ToLiquidSound: {fileID: 8300000, guid: 8bd9b7720126e634bb09e92f22e48582, type: 3}
+  - ToSolidSound: {fileID: 8300000, guid: db7f73797690ddc45aeedd1c55b20fb0, type: 3}
+  - ToGazSound: {fileID: 8300000, guid: 769fb73f5a9bbcf4dacec6ea875a44fb, type: 3}
+  - ClickSound: {fileID: 8300000, guid: 1cf5bbb2f3d5ca34485aa0f3888153eb, type: 3}
+  - WinSound: {fileID: 8300000, guid: bb06c9b17f1bc484cb619514c26bbc52, type: 3}
+  - DieSound: {fileID: 8300000, guid: 0964257faca8e8f4c997cbd0a14f9093, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
