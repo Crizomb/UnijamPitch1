@@ -129,7 +129,6 @@ public abstract class PlayerMouvement : MonoBehaviour
         }
         else if(speedTemp == 0)
         {
-            Debug.Log("lastdirection is "+lastDirection);
             renderer.flipX = lastDirection == -1;
         }
         else

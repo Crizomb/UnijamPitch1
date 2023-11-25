@@ -6,10 +6,7 @@ public class PlayerGaz : PlayerMouvement
 {
     public override void InputDown()
     {
-       /* if(rg.velocity.y < 0)
-        {
-            rg.velocity = new Vector2(0,-1);
-        }*/
+       rg.AddForce(new Vector2(0, -1) * 100, ForceMode2D.Impulse);
     }
 
     public override void InputUp()
@@ -21,4 +18,5 @@ public class PlayerGaz : PlayerMouvement
             rg.AddForce(direction * jumpHeight, ForceMode2D.Impulse);
         }
     }
+
 }

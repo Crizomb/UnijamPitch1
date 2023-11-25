@@ -312,4 +312,4 @@ MonoBehaviour:
   player: {fileID: 0}
   logic: {fileID: 0}
   fire_temp: 100
-  temp_zone_radius: 3
+  temp_zone_radius: 4
