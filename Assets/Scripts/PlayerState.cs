@@ -36,11 +36,13 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(temperature.slimeTemp);
         checkStateChange();
     }
 
     void checkStateChange()
     {
+        
         if (temperature.slimeTemp >= liquid_gas_temp)
         {
             if (state == State.Liquid)
@@ -48,50 +50,51 @@ public class PlayerState : MonoBehaviour
                 liquid_to_gas();
             }
         }
-        else if (temperature.slimeTemp < liquid_gas_temp)
+        if (temperature.slimeTemp < liquid_gas_temp)
         {
             if (state == State.Gas)
             {
                 gas_to_liquid();
             }
         }
-        else if (temperature.slimeTemp >= solid_liquid_temp)
+        if (temperature.slimeTemp >= solid_liquid_temp)
         {
             if (state == State.Solid)
             {
                 solide_to_liquid();
             }
         }
-        else if (temperature.slimeTemp < solid_liquid_temp)
+        if (temperature.slimeTemp < solid_liquid_temp)
         {
             if (state == State.Liquid)
             {
                 liquid_to_solid();
             }
         }
+        
     }
 
 
 
     void solide_to_liquid()
     {
-        state = State.Solid;
+        this.state = State.Liquid;
 
     }
 
     void liquid_to_solid()
     {
-        state = State.Solid;
+        this.state = State.Solid;
     }
 
     void liquid_to_gas()
     {
-        state = State.Gas;
+        this.state = State.Gas;
     }
 
     void gas_to_liquid()
     {
-        state = State.Liquid;
+        this.state = State.Liquid;
     }
 
 }
