@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6de1d85f333893146b066b5dc5c516a9
+guid: 1969faae1ac3bd8478d669ddf1862d0a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,23 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,28 +110,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilesheetGameObject_0
+      name: props&grid tilesheet_0
       rect:
         serializedVersion: 2
-        x: 960
-        y: 960
+        x: 0
+        y: 640
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b333ebb86d5b10408fa0d40eceabb46
-      internalID: 1223196808
+      spriteID: 88b47b1c32b3a074d8678dc84e0ff9eb
+      internalID: 2047142078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_5
+      name: props&grid tilesheet_1
       rect:
         serializedVersion: 2
         x: 320
@@ -152,20 +139,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96a5f5e4e75569b48a06053542806d73
-      internalID: 500754303
+      spriteID: f81a31a8a74fa6b4f9fa7da5b437d146
+      internalID: -12968071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_6
+      name: props&grid tilesheet_2
       rect:
         serializedVersion: 2
         x: 640
@@ -173,20 +160,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f9fca691e0ef9644a5a60753e5b0de3
-      internalID: 660098822
+      spriteID: 2266e893de73c674498ee0afb713f5d1
+      internalID: 1049478792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_7
+      name: props&grid tilesheet_3
       rect:
         serializedVersion: 2
         x: 960
@@ -194,104 +181,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3470c021f7ba0cd44a97902eaefc22de
-      internalID: -38379642
+      spriteID: 90dfd76168ba1f34a849dca3a0559a1a
+      internalID: -1504260941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_8
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dee3f1ad1c0f32f4dadbf68dc6667561
-      internalID: -1190119763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_9
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 988e7cc5389a1844885b99c609826d0e
-      internalID: 869889262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_10
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae2e388366182b846b83d2a2167e2d8f
-      internalID: -1708313733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_11
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09618cc11462570479bbaf2a4097e94b
-      internalID: -850515386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_12
+      name: props&grid tilesheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -299,20 +202,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 229698eefed41b44c94d6fee51299b3e
-      internalID: -844682116
+      spriteID: 078cd8267935c964cb30277ad28bdcf3
+      internalID: -161640010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_13
+      name: props&grid tilesheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -320,20 +223,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e90ab6a40ad0b43a37f8202f75685d
-      internalID: 1017643436
+      spriteID: 809a7f6f717d6e642935b6def8cb9989
+      internalID: 386748386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_14
+      name: props&grid tilesheet_6
       rect:
         serializedVersion: 2
         x: 640
@@ -341,20 +244,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2028c870646d0ad469e4fecdf6e5e73c
-      internalID: 147328669
+      spriteID: e2c9614eec9f50a448c2b1238a4521eb
+      internalID: 1417920164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_15
+      name: props&grid tilesheet_7
       rect:
         serializedVersion: 2
         x: 960
@@ -362,20 +265,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a2308234e1298d47a198651ff23afe2
-      internalID: 1646499860
+      spriteID: ae32ccfffdaa76f4db1223ca3313c753
+      internalID: 348885735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_16
+      name: props&grid tilesheet_8
       rect:
         serializedVersion: 2
         x: 1280
@@ -383,41 +286,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2670e36229fc93a4e8e8f55953bd2ba5
-      internalID: 1397296187
+      spriteID: f80c83848aeec24458c5202aa4840179
+      internalID: 23759912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_17
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 320
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afac7d3b687cb3a4d8267f53933dd0ba
-      internalID: 973042860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_20
+      name: props&grid tilesheet_9
       rect:
         serializedVersion: 2
         x: 0
@@ -425,20 +307,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd12f542029c35a4aa82420117987275
-      internalID: 302084520
+      spriteID: e883b380a849c7e458851867dcff9df5
+      internalID: -854027464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_21
+      name: props&grid tilesheet_10
       rect:
         serializedVersion: 2
         x: 320
@@ -446,20 +328,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d18ae775d40cd5428066d91a6a9ffd3
-      internalID: -1249001260
+      spriteID: aa555235a1e05ec47b10983a9abcfb98
+      internalID: 12185354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_22
+      name: props&grid tilesheet_11
       rect:
         serializedVersion: 2
         x: 640
@@ -467,20 +349,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a5a2b847169034e94e4cc25b5e1015
-      internalID: -113939498
+      spriteID: 41e0a5d0fbd38e340bdcc1f933858419
+      internalID: -720693584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_23
+      name: props&grid tilesheet_12
       rect:
         serializedVersion: 2
         x: 960
@@ -488,20 +370,20 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd9bb4cdf117742418ecb623d424183f
-      internalID: 16372212
+      spriteID: 762dc8488ffd4e544a63fe859c2f1a07
+      internalID: 1399229486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesheetGameObject_24
+      name: props&grid tilesheet_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -509,35 +391,14 @@ TextureImporter:
         width: 320
         height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b093386a98156e94c82b50a698674dc4
-      internalID: -1861252909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesheetGameObject_25
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a7b91493a5fe8047a1481122dee0a30
-      internalID: -1661403054
+      spriteID: 8bbe734eb7271d8459f3813055fdb180
+      internalID: 793334783
       vertices: []
       indices: 
       edges: []
@@ -553,32 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesheetGameObject_0: 1223196808
-      TilesheetGameObject_1: 310992831
-      TilesheetGameObject_10: -1708313733
-      TilesheetGameObject_11: -850515386
-      TilesheetGameObject_12: -844682116
-      TilesheetGameObject_13: 1017643436
-      TilesheetGameObject_14: 147328669
-      TilesheetGameObject_15: 1646499860
-      TilesheetGameObject_16: 1397296187
-      TilesheetGameObject_17: 973042860
-      TilesheetGameObject_18: -1475823348
-      TilesheetGameObject_19: 48157161
-      TilesheetGameObject_2: -434842129
-      TilesheetGameObject_20: 302084520
-      TilesheetGameObject_21: -1249001260
-      TilesheetGameObject_22: -113939498
-      TilesheetGameObject_23: 16372212
-      TilesheetGameObject_24: -1861252909
-      TilesheetGameObject_25: -1661403054
-      TilesheetGameObject_3: -413192519
-      TilesheetGameObject_4: -2023761163
-      TilesheetGameObject_5: 500754303
-      TilesheetGameObject_6: 660098822
-      TilesheetGameObject_7: -38379642
-      TilesheetGameObject_8: -1190119763
-      TilesheetGameObject_9: 869889262
+      props&grid tilesheet_0: 2047142078
+      props&grid tilesheet_1: -12968071
+      props&grid tilesheet_10: 12185354
+      props&grid tilesheet_11: -720693584
+      props&grid tilesheet_12: 1399229486
+      props&grid tilesheet_13: 793334783
+      props&grid tilesheet_2: 1049478792
+      props&grid tilesheet_3: -1504260941
+      props&grid tilesheet_4: -161640010
+      props&grid tilesheet_5: 386748386
+      props&grid tilesheet_6: 1417920164
+      props&grid tilesheet_7: 348885735
+      props&grid tilesheet_8: 23759912
+      props&grid tilesheet_9: -854027464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
