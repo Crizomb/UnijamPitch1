@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,7 +13,7 @@ public abstract class PlayerMouvement : MonoBehaviour
     [Header("State properties")]
 
     [Tooltip("PlayerSpeed")]
-    public int speed;
+    public float speed;
     [Tooltip("Jump height")]
     public int jumpHeight;
 
@@ -30,8 +31,28 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected Transform collisionRightCheck2;
 
-    
+    [Space]
+
+    [SerializeField]
+    protected float collisionDistance;
+    [SerializeField]
+    protected bool isGrounded;
+    [SerializeField]
+    protected int isWalled;
+
     protected Rigidbody2D rg;
+
+
+    private bool bufferJump;
+
+
+
+    /*private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(collisionLeftCheck2.position, collisionLeftCheck2.position + Vector3.down * collisionDistance);
+    }*/
+
 
     void OnValidate()   // Assignation dès que l'éditeur s'update (changement de valeur de quelque chose)
     {
@@ -41,57 +62,86 @@ public abstract class PlayerMouvement : MonoBehaviour
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
     }
 
-
     void Update()
     {
+        if (Input.GetKeyDown("z"))
+        {
+            bufferJump = true;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        IsPlayerGrounded();
+        isWalled = IsPlayerWalled();
+
+
         // Developpement ONLY, this should be dealt by the InputManager
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && isWalled != 1)
+        {
             InputRight();
+            Debug.Log("Input right");
+        }
 
-        if (Input.GetKey("q"))
+        if (Input.GetKey("q") && isWalled != -1)
+        {
             InputLeft();
+            Debug.Log("Input left");
+        }
 
-        if (Input.GetKeyDown("z"))
+        if (bufferJump)
+        {
             InputUp();
+            bufferJump = false;
+        }
 
         if (Input.GetKeyDown("s"))
             InputDown();
+
+
     }
 
 
     public void InputLeft()
     {
         //Debug.Log("Going left");
-        Vector2 direction = new Vector2 (-1, 0);
-        rg.AddForce(direction*speed);
+        Vector3 direction = new Vector2(-1, 0);
+        //rg.AddForce(direction*speed);
+        transform.position += direction*speed/60;
     }
 
     public void InputRight()
     {
         //Debug.Log("Going right");
-        Vector2 direction = new Vector2(1, 0);
-        rg.AddForce(direction*speed);
+        Vector3 direction = new Vector2(1, 0);
+        //rg.AddForce(direction*speed);
+        transform.position += direction*speed/60;
     }
 
     public abstract void InputUp(); // Depends on the state of the player
 
     public abstract void InputDown(); // Depends on the state of the player
 
-    public bool IsPlayerGrounded()
-    {
-        bool isGrounded = rg.velocity.y < 0.1 && rg.velocity.y > -0.1;
 
-        if (isGrounded)
+
+
+    public void IsPlayerGrounded()
+    {
+        bool isG = rg.velocity.y < 0.1 && rg.velocity.y > -0.1;
+
+        if (isG)
         {
-            isGrounded = false;
-            for(float i = 1f; i<raycastPrecision; i++)
+            isG = false;
+            for(float i = 0f; i<=raycastPrecision; i++)
             {
-                isGrounded |= Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck2.position, collisionRightCheck1.position, i / raycastPrecision), Vector2.down, 0.1f);
+                isG = Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck2.position, collisionRightCheck2.position, i / raycastPrecision), Vector2.down, collisionDistance);
+                if (isG)
+                    break;
             }
         }
 
-        return isGrounded;
+        isGrounded = isG;
     }
 
     public int IsPlayerWalled()
@@ -104,7 +154,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         for (float i = 0f; i <= raycastPrecision; i++)
         {
-            RaycastHit2D raycast = Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck1.position, collisionLeftCheck2.position, i / raycastPrecision), Vector2.left, 0.1f);
+            RaycastHit2D raycast = Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck1.position, collisionLeftCheck2.position, i / raycastPrecision), Vector2.left, collisionDistance);
 
             //Debug.Log(raycast.collider);
 

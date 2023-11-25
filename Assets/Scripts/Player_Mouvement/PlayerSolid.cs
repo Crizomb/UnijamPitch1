@@ -14,7 +14,7 @@ public class PlayerSolid : PlayerMouvement
 
     public override void InputUp()
     {
-        if (IsPlayerGrounded())
+        if (isGrounded)
         {
             //Debug.Log("Jump!");
             Vector2 direction = new Vector2(0, 1);
