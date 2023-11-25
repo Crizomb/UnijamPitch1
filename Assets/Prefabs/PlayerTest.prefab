@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4979710661597669437}
   - component: {fileID: 2383125512144953760}
   - component: {fileID: 8679573138552477243}
+  - component: {fileID: 7692561519929833714}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Untagged
@@ -203,6 +204,18 @@ MonoBehaviour:
   collisionRightCheck1: {fileID: 4368870729430373895}
   collisionRightCheck2: {fileID: 904053567720690902}
   wallJumpBonus: 20
+--- !u!114 &7692561519929833714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912049578374453444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876d68580e53af14bb208371ac50c991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5248500283595480232
 GameObject:
   m_ObjectHideFlags: 0
