@@ -30,6 +30,9 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected Transform collisionRightCheck2;
 
+    [SerializeField]
+    protected bool isGrounded;
+
     
     protected Rigidbody2D rg;
 
@@ -53,7 +56,10 @@ public abstract class PlayerMouvement : MonoBehaviour
             InputLeft();
 
         if (Input.GetKeyDown("z"))
+        {
             InputUp();
+            Debug.Log("Key down");
+        }
 
         if (Input.GetKeyDown("s"))
             InputDown();
@@ -80,16 +86,18 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     public bool IsPlayerGrounded()
     {
-        bool isGrounded = rg.velocity.y < 0.1 && rg.velocity.y > -0.1;
+        bool isG = rg.velocity.y < 0.1 && rg.velocity.y > -0.1;
 
-        if (isGrounded)
+        if (isG)
         {
-            isGrounded = false;
+            isG = false;
             for(float i = 1f; i<raycastPrecision; i++)
             {
-                isGrounded |= Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck2.position, collisionRightCheck1.position, i / raycastPrecision), Vector2.down, 0.1f);
+                isG |= Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck2.position, collisionRightCheck1.position, i / raycastPrecision), Vector2.down, 0.1f);
             }
         }
+
+        isGrounded = isG;
 
         return isGrounded;
     }
