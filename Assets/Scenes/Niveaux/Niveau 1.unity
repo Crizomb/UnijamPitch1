@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 412771120}
   - component: {fileID: 412771119}
   - component: {fileID: 412771118}
+  - component: {fileID: 412771124}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -317,7 +318,11 @@ MonoBehaviour:
   collisionLeftCheck2: {fileID: 257713293}
   collisionRightCheck1: {fileID: 22216845}
   collisionRightCheck2: {fileID: 688090523}
+  collisionDistance: 0
+  isGrounded: 0
+  isWalled: 0
   wallJumpBonus: 8
+  wallJumpAngle: 0
 --- !u!61 &412771119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -382,6 +387,9 @@ MonoBehaviour:
   collisionLeftCheck2: {fileID: 257713293}
   collisionRightCheck1: {fileID: 22216845}
   collisionRightCheck2: {fileID: 688090523}
+  collisionDistance: 0
+  isGrounded: 0
+  isWalled: 0
 --- !u!50 &412771121
 Rigidbody2D:
   serializedVersion: 4
@@ -480,6 +488,18 @@ Transform:
   - {fileID: 688090523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412771124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412771117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519a54f17765c8c498a58514cee9679d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &688090522
 GameObject:
   m_ObjectHideFlags: 0
