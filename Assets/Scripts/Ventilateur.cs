@@ -37,7 +37,8 @@ public class Ventilateur : MonoBehaviour
             force = 1000f;
         }
         Debug.Log(force);
-        collision.attachedRigidbody.AddForce(new Vector2(0, 1f) * force);
+        Vector2 ventilator_direction = transform.rotation * Vector2.up;
+        collision.attachedRigidbody.AddForce(ventilator_direction * force);
         
     }
 
