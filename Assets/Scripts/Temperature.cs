@@ -18,7 +18,7 @@ public class Temperature : MonoBehaviour
     public float roomTemp = 20; // Temperature de la salle
     public float slimeTemp; // Temperature du slime
     public float localTemp; // Temperature autour du slime (change entre zone chaude/froide)
-    public float heatTransferRate = 0.1f; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
+    public float heatTransferRate = 0.3f; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,8 @@ public class Temperature : MonoBehaviour
         // rotation à 90° fait que x est la hauteur et y la largeur
         float SliderHeight = thermometerSlider.GetComponent<RectTransform>().rect.width;
         float SliderMaxValue = thermometerSlider.maxValue;
-        float TempGaugeHeight = SliderHeight * roomTemp / SliderMaxValue;
+        float SliderMinValue = thermometerSlider.minValue;
+        float TempGaugeHeight = SliderHeight * (roomTemp - SliderMinValue) / (SliderMaxValue - SliderMinValue);
         roomTemperatureGaugeRectTransform.anchoredPosition = new Vector2(TempGaugeHeight, 0);
         Debug.Log("TempGaugeHeight : " + TempGaugeHeight);
         Debug.Log("SliderHeight : " + SliderHeight);
