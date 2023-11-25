@@ -506,7 +506,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2fb09ea36447f85498129bfffeb3ecf2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -816,10 +816,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 9.81
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 99a68a3efac695e4f85851c115065c76, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -891,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 1827688372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24381587, y: -0.5758716, z: 0}
+  m_LocalPosition: {x: 1.352, y: 1.413, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -920,6 +920,7 @@ MonoBehaviour:
   collisionLeftCheck2: {fileID: 998392959}
   collisionRightCheck1: {fileID: 2013949931}
   collisionRightCheck2: {fileID: 1126253631}
+  isGrounded: 0
 --- !u!61 &1827688377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -929,7 +930,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1827688372}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 99a68a3efac695e4f85851c115065c76, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -984,6 +985,7 @@ MonoBehaviour:
   collisionLeftCheck2: {fileID: 998392959}
   collisionRightCheck1: {fileID: 2013949931}
   collisionRightCheck2: {fileID: 1126253631}
+  isGrounded: 0
   wallJumpBonus: 8
 --- !u!1 &2013949930
 GameObject:
