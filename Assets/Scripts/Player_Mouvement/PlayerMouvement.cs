@@ -51,6 +51,8 @@ public abstract class PlayerMouvement : MonoBehaviour
     protected Rigidbody2D rg;
     [SerializeField]
     protected new SpriteRenderer renderer;
+    [SerializeField]
+    protected GameObject player;
 
 
     private bool bufferJump;
@@ -68,6 +70,8 @@ public abstract class PlayerMouvement : MonoBehaviour
         bool gotComponent1 = TryGetComponent(out rg);
         bool gotComponent2 = TryGetComponent(out animator);
         bool gotComponent3 = TryGetComponent(out renderer);
+
+        player = GameObject.Find("Player");
 
         if (!(gotComponent1 && gotComponent2 && gotComponent3))
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
@@ -145,6 +149,9 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         animator.SetInteger("verticalDirection", yVel);
 
+        Vector3 tempPos = transform.position;
+        player.transform.position = transform.position;
+        transform.position = tempPos;
 
     }
 
