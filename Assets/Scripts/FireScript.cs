@@ -10,7 +10,7 @@ public class FireScript : MonoBehaviour
 
     private Temperature temperature;
 
-    public float temp_zone_radius = 3f;
+    public float temp_zone_radius = 4f;
 
     bool is_in_temp_zone = false;
 
