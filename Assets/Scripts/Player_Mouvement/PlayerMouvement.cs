@@ -9,6 +9,7 @@ using UnityEngine;
 public abstract class PlayerMouvement : MonoBehaviour
 {
 
+
     [Header("State properties")]
 
     [Tooltip("PlayerSpeed")]
@@ -32,6 +33,8 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     [Space]
 
+    [Header("Debug variables")]
+
     [SerializeField]
     protected float collisionDistance;
     [SerializeField]
@@ -39,12 +42,16 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected int isWalled;
 
+
+    [Space]
+
+    [SerializeField]
+    protected Animator animator;
+    [SerializeField]
     protected Rigidbody2D rg;
 
 
     private bool bufferJump;
-
-
 
     /*private void OnDrawGizmos()
     {
@@ -55,9 +62,10 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     void OnValidate()   // Assignation dès que l'éditeur s'update (changement de valeur de quelque chose)
     {
-        bool gotComponent = TryGetComponent(out rg);
+        bool gotComponent1 = TryGetComponent(out rg);
+        bool gotComponent2 = TryGetComponent(out animator);
 
-        if (!gotComponent)
+        if (!(gotComponent1 && gotComponent2))
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
     }
 
@@ -75,26 +83,43 @@ public abstract class PlayerMouvement : MonoBehaviour
         isWalled = IsPlayerWalled();
 
 
-        // Developpement ONLY, this should be dealt by the InputManager
+        int speed = 0;
+        bool isJumping = false;
+
 
         if (Input.GetKey("d") && isWalled != 1)
         {
             InputRight();
+            speed = 1;
+            //Debug.Log("Input right");
         }
 
         if (Input.GetKey("q") && isWalled != -1)
         {
             InputLeft();
+            speed = -1;
+            //Debug.Log("Input left");
         }
 
         if (bufferJump)
         {
             InputUp();
+            isJumping = true;
             bufferJump = false;
         }
 
-        if (Input.GetKeyDown("s"))
-            InputDown();
+        /*if (Input.GetKeyDown("s"))
+            InputDown();*/
+
+        animator.SetBool("isJumping", isJumping);
+        animator.SetFloat("speed", speed);
+
+        int yVel = -1;
+
+        if (rg.velocity.y > 0)
+            yVel = 1;
+
+        animator.SetInteger("verticalDirection", yVel);
 
 
     }
@@ -121,6 +146,11 @@ public abstract class PlayerMouvement : MonoBehaviour
     public abstract void InputDown(); // Depends on the state of the player
 
 
+
+    public void UpdateAnimation()
+    {
+        
+    }
 
 
     public void IsPlayerGrounded()

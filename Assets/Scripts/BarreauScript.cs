@@ -21,7 +21,7 @@ public class BarreauScript : MonoBehaviour
     void Update()
     {
         State state = playerStateScript.getState();
-        Debug.Log("State : " + state);
+        Debug.Log("state : " + state);
         if (state == State.Solid)
         {
             // set active rb
