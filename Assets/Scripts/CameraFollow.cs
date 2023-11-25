@@ -23,11 +23,9 @@ public class CameraFollow : MonoBehaviour
             newPosX = (target.position.x);
         }
 
-        if (target.position.y > ytest) {
-            newPosY = (target.position.y + yOffset); 
-        }
+            newPosY = (target.position.y);
 
-        Vector3 newPos = new Vector3(newPosX, newPosY, -10f);
+        Vector3 newPos = new Vector3(newPosX, newPosY + yOffset, -10f);
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
     }
 }
