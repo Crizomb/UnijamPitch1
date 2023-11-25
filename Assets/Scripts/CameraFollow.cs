@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -11,21 +12,37 @@ public class CameraFollow : MonoBehaviour
     public float ytest = 5f;
     public float xmax = 100f;
     public Transform target;
+    private Rigidbody2D targetRigidbody;
 
+    private void Start()
+    {
+        targetRigidbody = target.GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
         float newPosX = transform.position.x;
         float newPosY = transform.position.y;
+        
+          
 
-
-        if (target.position.x > xtest && target.position.x < xmax) {
-            newPosX = (target.position.x);
-        }
+            if (target.position.x > xtest && target.position.x < xmax)
+            {
+                newPosX = (target.position.x);
+            }
 
             newPosY = (target.position.y);
-
+            if (target.position.y > 2.2)
+            {
+                yOffset = -3f;
+            }
+            else
+            {
+                yOffset = 3f;
+            }
+        
         Vector3 newPos = new Vector3(newPosX, newPosY + yOffset, -10f);
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+        Debug.Log(newPos);
     }
 }
