@@ -6,6 +6,7 @@ public class PlayerLiquid : PlayerMouvement
 {
     [Header("State related properties")]
     public int wallJumpBonus;
+    public int wallJumpAngle;
 
 
     public override void InputDown()
@@ -18,7 +19,7 @@ public class PlayerLiquid : PlayerMouvement
 
     public override void InputUp()
     {
-        if (IsPlayerGrounded())
+        if (isGrounded)
         {
             //Debug.Log("Jump!");
             Vector2 direction = new Vector2(0, 1);
@@ -31,7 +32,7 @@ public class PlayerLiquid : PlayerMouvement
             if(wall!=0)
             {
                 //Debug.Log("Wall Jump!");
-                Vector2 direction = new Vector2(-0.9f*wall, 1);
+                Vector2 direction = new Vector2(-wall/Mathf.Tan(wallJumpAngle), 1);
                 rg.AddForce(direction * (jumpHeight+wallJumpBonus), ForceMode2D.Impulse);
             }
         }
