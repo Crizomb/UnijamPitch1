@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6320176920577644441}
   - component: {fileID: 3979495146581217512}
   - component: {fileID: 2029563812421935691}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flag-Sheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
