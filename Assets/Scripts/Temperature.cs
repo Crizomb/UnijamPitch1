@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Temperature : MonoBehaviour
 {
-    public float roomTemp; // Temperature de la salle
+    
+    public float roomTemp = 20; // Temperature de la salle
     public float slimeTemp; // Temperature du slime
     public float localTemp; // Temperature autour du slime (change entre zone chaude/froide)
-    public float heatTransferRate; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
+    public float heatTransferRate = 0.1f; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
 
     // Start is called before the first frame update
     void Start()
