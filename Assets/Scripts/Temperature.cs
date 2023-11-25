@@ -32,9 +32,7 @@ public class Temperature : MonoBehaviour
         float SliderMinValue = thermometerSlider.minValue;
         float TempGaugeHeight = SliderHeight * (roomTemp - SliderMinValue) / (SliderMaxValue - SliderMinValue);
         roomTemperatureGaugeRectTransform.anchoredPosition = new Vector2(TempGaugeHeight, 0);
-        Debug.Log("TempGaugeHeight : " + TempGaugeHeight);
-        Debug.Log("SliderHeight : " + SliderHeight);
-        Debug.Log("SliderMaxValue : " + SliderMaxValue);
+
         
     }
 

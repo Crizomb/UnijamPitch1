@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: "Assets/Scenes/Cl\xE9ment.unity"
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Niveaux/Niveau 2.unity
+    guid: 8f95be45525eb40469dafede6868e1f9
+  - enabled: 0
     path: Assets/Scenes/Ryad.unity
     guid: f12e5a713743a134e8f24aadc45a4037
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlagTest/Flag1.unity
     guid: b8362c1c4b290334092e2d80f8ff5098
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlagTest/Flag2.unity
     guid: 2bdc0f3d6e5abc94397da665946613e5
   - enabled: 1
@@ -22,8 +22,8 @@ EditorBuildSettings:
     guid: 70aba17956e63e346adafe8509536017
   - enabled: 1
     path: Assets/Scenes/Niveaux/Niveau 2.unity
-    guid: 1d4337f01270a7540b458f89c27312e8
-  - enabled: 1
+    guid: 8f95be45525eb40469dafede6868e1f9
+  - enabled: 0
     path: Assets/Scenes/Niveaux/Niveau 3.unity
     guid: fafec5fa719a13f44904d7718d89f91a
   m_configObjects: {}

@@ -16,13 +16,25 @@ public class PlayerState : MonoBehaviour
     public GameObject logic;
     public float solid_liquid_temp = 0;
     public float liquid_gas_temp = 100;
+
+    [Header("Player states")]
+
+    public GameObject solidState;
+    public GameObject liquidState;
+    public GameObject gasState;
+
+    [Space]
+
+    [SerializeField]
     private State state;
 
+    [Space]
 
     private Temperature temperature;
 
     public State getState()
     {
+
         return state;
     }
 
@@ -36,11 +48,13 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(temperature.slimeTemp);
         checkStateChange();
     }
 
     void checkStateChange()
     {
+        
         if (temperature.slimeTemp >= liquid_gas_temp)
         {
             if (state == State.Liquid)
@@ -48,50 +62,62 @@ public class PlayerState : MonoBehaviour
                 liquid_to_gas();
             }
         }
-        else if (temperature.slimeTemp < liquid_gas_temp)
+        if (temperature.slimeTemp < liquid_gas_temp)
         {
             if (state == State.Gas)
             {
                 gas_to_liquid();
             }
         }
-        else if (temperature.slimeTemp >= solid_liquid_temp)
+        if (temperature.slimeTemp >= solid_liquid_temp)
         {
             if (state == State.Solid)
             {
                 solide_to_liquid();
             }
         }
-        else if (temperature.slimeTemp < solid_liquid_temp)
+        if (temperature.slimeTemp < solid_liquid_temp)
         {
             if (state == State.Liquid)
             {
                 liquid_to_solid();
             }
         }
+        
     }
 
 
 
     void solide_to_liquid()
     {
-        state = State.Solid;
+        state = State.Liquid;
 
+        solidState.SetActive(false);
+        liquidState.SetActive(true);
     }
 
     void liquid_to_solid()
     {
         state = State.Solid;
+
+        liquidState.SetActive(false);
+        solidState.SetActive(true);
     }
 
     void liquid_to_gas()
     {
         state = State.Gas;
+
+        liquidState.SetActive(false);
+        gasState.SetActive(true);
     }
 
     void gas_to_liquid()
     {
         state = State.Liquid;
+
+        gasState.SetActive(false);
+        liquidState.SetActive(true);
     }
 
 }

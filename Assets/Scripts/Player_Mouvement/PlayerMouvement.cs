@@ -9,6 +9,7 @@ using UnityEngine;
 public abstract class PlayerMouvement : MonoBehaviour
 {
 
+
     [Header("State properties")]
 
     [Tooltip("PlayerSpeed")]
@@ -32,6 +33,8 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     [Space]
 
+    [Header("Debug variables")]
+
     [SerializeField]
     protected float collisionDistance;
     [SerializeField]
@@ -39,12 +42,19 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected int isWalled;
 
+
+    [Space]
+
+    [SerializeField]
+    protected Animator animator;
+    [SerializeField]
     protected Rigidbody2D rg;
+    [SerializeField]
+    protected new SpriteRenderer renderer;
 
 
     private bool bufferJump;
-
-
+    private int lastDirection;
 
     /*private void OnDrawGizmos()
     {
@@ -55,9 +65,11 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     void OnValidate()   // Assignation dès que l'éditeur s'update (changement de valeur de quelque chose)
     {
-        bool gotComponent = TryGetComponent(out rg);
+        bool gotComponent1 = TryGetComponent(out rg);
+        bool gotComponent2 = TryGetComponent(out animator);
+        bool gotComponent3 = TryGetComponent(out renderer);
 
-        if (!gotComponent)
+        if (!(gotComponent1 && gotComponent2 && gotComponent3))
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
     }
 
@@ -69,32 +81,70 @@ public abstract class PlayerMouvement : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        lastDirection = 0;
+    }
+
     void FixedUpdate()
     {
         IsPlayerGrounded();
         isWalled = IsPlayerWalled();
 
 
-        // Developpement ONLY, this should be dealt by the InputManager
+        int speedTemp = 0;
+        bool isJumping = false;
+
 
         if (Input.GetKey("d") && isWalled != 1)
         {
             InputRight();
+            speedTemp = 1;
+            //Debug.Log("Input right");
         }
 
         if (Input.GetKey("q") && isWalled != -1)
         {
             InputLeft();
+            speedTemp = -1;
+            //Debug.Log("Input left");
         }
 
         if (bufferJump)
         {
             InputUp();
+            isJumping = true;
             bufferJump = false;
         }
 
-        if (Input.GetKeyDown("s"))
-            InputDown();
+        /*if (Input.GetKeyDown("s"))
+            InputDown();*/
+
+        animator.SetBool("isJumping", isJumping);
+        animator.SetFloat("speed", Mathf.Abs(speedTemp));
+
+        if(speedTemp < 0){
+            renderer.flipX = true;
+            lastDirection = speedTemp;
+        }
+        else if(speedTemp == 0)
+        {
+            Debug.Log("lastdirection is "+lastDirection);
+            renderer.flipX = lastDirection == -1;
+        }
+        else
+        {
+            renderer.flipX = false;
+            lastDirection = speedTemp;
+        }
+
+        
+        int yVel = -1;
+
+        if (rg.velocity.y > 0)
+            yVel = 1;
+
+        animator.SetInteger("verticalDirection", yVel);
 
 
     }
@@ -121,6 +171,11 @@ public abstract class PlayerMouvement : MonoBehaviour
     public abstract void InputDown(); // Depends on the state of the player
 
 
+
+    public void UpdateAnimation()
+    {
+        
+    }
 
 
     public void IsPlayerGrounded()
