@@ -290,10 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ae80e1c12e1e140a12e629be2fe6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  yOffset: 1
+  FollowSpeed: 3
+  yOffset: 5
   xtest: 1
-  ytest: 5
+  ytest: 0
   xmax: 100
   target: {fileID: 412771123}
 --- !u!1001 &296268556
@@ -544,7 +544,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &412771122
 SpriteRenderer:
@@ -725,13 +725,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: box
       objectReference: {fileID: 0}
+    - target: {fileID: 2899377238486351053, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.51
+      value: 23.53
       objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.47
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.z
