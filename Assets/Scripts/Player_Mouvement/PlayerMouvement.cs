@@ -38,12 +38,12 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected bool isGrounded;
     [SerializeField]
-    protected bool isWalled;
+    protected int isWalled;
 
     protected Rigidbody2D rg;
 
 
-    private bool bufferJump; // Unused
+    private bool bufferJump;
 
 
 
@@ -62,36 +62,44 @@ public abstract class PlayerMouvement : MonoBehaviour
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
     }
 
-    /*void Update()
+    void Update()
     {
         if (Input.GetKeyDown("z"))
         {
             bufferJump = true;
         }
-    }*/
+    }
 
-    void Update()
+    void FixedUpdate()
     {
+        IsPlayerGrounded();
+        isWalled = IsPlayerWalled();
+
+
         // Developpement ONLY, this should be dealt by the InputManager
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && isWalled != 1)
+        {
             InputRight();
+            Debug.Log("Input right");
+        }
 
-        if (Input.GetKey("q"))
+        if (Input.GetKey("q") && isWalled != -1)
+        {
             InputLeft();
+            Debug.Log("Input left");
+        }
 
-        if (Input.GetKeyDown("z"))
+        if (bufferJump)
         {
             InputUp();
-            //bufferJump = false;
+            bufferJump = false;
         }
 
         if (Input.GetKeyDown("s"))
             InputDown();
 
 
-        IsPlayerGrounded();
-        isWalled = IsPlayerWalled() != 0;
     }
 
 
@@ -99,16 +107,16 @@ public abstract class PlayerMouvement : MonoBehaviour
     {
         //Debug.Log("Going left");
         Vector3 direction = new Vector2(-1, 0);
-        rg.AddForce(direction*speed);
-        //transform.position += direction*speed;
+        //rg.AddForce(direction*speed);
+        transform.position += direction*speed/60;
     }
 
     public void InputRight()
     {
         //Debug.Log("Going right");
         Vector3 direction = new Vector2(1, 0);
-        rg.AddForce(direction*speed);
-        //transform.position += direction * speed;
+        //rg.AddForce(direction*speed);
+        transform.position += direction*speed/60;
     }
 
     public abstract void InputUp(); // Depends on the state of the player
