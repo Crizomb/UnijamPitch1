@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -81,13 +80,11 @@ public abstract class PlayerMouvement : MonoBehaviour
         if (Input.GetKey("d") && isWalled != 1)
         {
             InputRight();
-            Debug.Log("Input right");
         }
 
         if (Input.GetKey("q") && isWalled != -1)
         {
             InputLeft();
-            Debug.Log("Input left");
         }
 
         if (bufferJump)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec4c52cdbf79b534996acefa0eca0d7d
+guid: b62c5a9641bb5cc41bff9e1b44e13272
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +110,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: feu-Sheet_0
+      name: transi murs 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8119ff9996ecf046980800aa90e68cb
+      internalID: -16466581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transi murs 1_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7993ec5a579aea4080505990d56bf4e
+      internalID: 1627051512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: transi murs 1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c8f08f42b5fb7c469c325984b0a3cbe
-      internalID: 1241199346
+      spriteID: 939797921b12b6143939bb7755be0f7f
+      internalID: -1654904130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: feu-Sheet_1
+      name: transi murs 1_3
       rect:
         serializedVersion: 2
         x: 320
@@ -158,50 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd94561cd81e0564cb0e8aaef8cebb15
-      internalID: -2084966979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: feu-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3d724278e32a4548906e81eda7e8514
-      internalID: -1119755974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: feu-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b47913d30cb48644a43315977cd9b0d
-      internalID: 1541466613
+      spriteID: 9ad9df616846a9d4faea228b0aae83c6
+      internalID: 726396632
       vertices: []
       indices: 
       edges: []
@@ -217,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      feu-Sheet_0: 1241199346
-      feu-Sheet_1: -2084966979
-      feu-Sheet_2: -1119755974
-      feu-Sheet_3: 1541466613
+      transi murs 1_0: -16466581
+      transi murs 1_1: 1627051512
+      transi murs 1_2: -1654904130
+      transi murs 1_3: 726396632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
