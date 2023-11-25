@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: liquide
       objectReference: {fileID: 0}
+    - target: {fileID: 8474051852038365266, guid: 3937e4e5d22bd4349891727387e9dfe1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -259,6 +263,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6821816341976191880, guid: e94de362e8c633140b011a3b499388bf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 201751208742039262}
+    - targetCorrespondingSourceObject: {fileID: 6821816341976191880, guid: e94de362e8c633140b011a3b499388bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4756188808597497343}
   m_SourcePrefab: {fileID: 100100000, guid: e94de362e8c633140b011a3b499388bf, type: 3}
 --- !u!1 &2206719519867640902 stripped
 GameObject:
@@ -317,6 +324,42 @@ MonoBehaviour:
   animator: {fileID: 3406897521632781986}
   rg: {fileID: 5283317788439422516}
   renderer: {fileID: 5911976104363234064}
+  player: {fileID: 0}
+--- !u!70 &4756188808597497343
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206719519867640902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3, y: 3.45}
+  m_Direction: 0
 --- !u!95 &3406897521632781986 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8030931168965110124, guid: e94de362e8c633140b011a3b499388bf, type: 3}
@@ -386,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879372600121823871, guid: bd56d1be6d2fe8d41bd1b98b633fa52c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -398,6 +441,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4879372600121823871, guid: bd56d1be6d2fe8d41bd1b98b633fa52c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5732668698208371699}
+    - targetCorrespondingSourceObject: {fileID: 4879372600121823871, guid: bd56d1be6d2fe8d41bd1b98b633fa52c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4411921260400738126}
   m_SourcePrefab: {fileID: 100100000, guid: bd56d1be6d2fe8d41bd1b98b633fa52c, type: 3}
 --- !u!212 &2644070642439788047 stripped
 SpriteRenderer:
@@ -461,6 +507,52 @@ MonoBehaviour:
   animator: {fileID: 7488654513873471823}
   rg: {fileID: 5199504688280319730}
   renderer: {fileID: 2644070642439788047}
+  player: {fileID: 0}
+--- !u!61 &4411921260400738126
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760974749373414557}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.26, y: 3.45}
+    newSize: {x: 5.26, y: 3.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!95 &7488654513873471823 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 147206969914910637, guid: bd56d1be6d2fe8d41bd1b98b633fa52c, type: 3}
