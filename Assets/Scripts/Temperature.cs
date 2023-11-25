@@ -29,7 +29,8 @@ public class Temperature : MonoBehaviour
         // rotation à 90° fait que x est la hauteur et y la largeur
         float SliderHeight = thermometerSlider.GetComponent<RectTransform>().rect.width;
         float SliderMaxValue = thermometerSlider.maxValue;
-        float TempGaugeHeight = SliderHeight * roomTemp / SliderMaxValue;
+        float SliderMinValue = thermometerSlider.minValue;
+        float TempGaugeHeight = SliderHeight * (roomTemp - SliderMinValue) / (SliderMaxValue - SliderMinValue);
         roomTemperatureGaugeRectTransform.anchoredPosition = new Vector2(TempGaugeHeight, 0);
         Debug.Log("TempGaugeHeight : " + TempGaugeHeight);
         Debug.Log("SliderHeight : " + SliderHeight);
