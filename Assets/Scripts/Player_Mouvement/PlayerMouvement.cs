@@ -38,7 +38,7 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected float collisionDistance;
     [SerializeField]
-    protected bool isGrounded;
+    public bool isGrounded;
     [SerializeField]
     protected int isWalled;
 

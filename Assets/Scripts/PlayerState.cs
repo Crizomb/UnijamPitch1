@@ -31,6 +31,9 @@ public class PlayerState : MonoBehaviour
     [Space]
 
     private Temperature temperature;
+    private PlayerGaz gasScript;
+    private PlayerLiquid liquidScript;
+    private PlayerSolid solidScript;
 
     public State getState()
     {
@@ -38,6 +41,13 @@ public class PlayerState : MonoBehaviour
         return state;
     }
 
+
+    void OnValidate()
+    {
+        gasState.TryGetComponent(out gasScript);
+        liquidState.TryGetComponent(out liquidScript);
+        solidState.TryGetComponent(out solidScript);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +59,23 @@ public class PlayerState : MonoBehaviour
     void Update()
     {
         checkStateChange();
+    }
+
+    public bool IsPlayerGrounded()
+    {
+        switch(state)
+        {
+            case State.Solid:
+                return solidScript.isGrounded;
+
+            case State.Liquid:
+                return liquidScript.isGrounded;
+
+            case State.Gas:
+                return gasScript.isGrounded;
+        }
+
+        return false;
     }
 
     void checkStateChange()
