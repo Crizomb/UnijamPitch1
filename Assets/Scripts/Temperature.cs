@@ -7,7 +7,7 @@ public class Temperature : MonoBehaviour
 {
     // Get slider UI for the thermometer
     [SerializeField]
-    private Slider thermometerSlider;
+    private Slider thermometerSlider; // si Bug Drag and drop le GameObject Slider dans l'inspector (se trouve dans le canvas)
 
     [SerializeField]
     private GameObject RoomTemperatureGauge; // si Bug Drag and drop le GameObject RoomTemperatureGauge dans l'inspector (se trouve dans le canvas)
