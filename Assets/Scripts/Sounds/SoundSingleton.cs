@@ -45,6 +45,16 @@ public class SoundSingleton : MonoBehaviour
     {
         SoundManager.Instance.PlayMusic(GameMusic);
     }
+    
+    public void PlayWin()
+    {
+        SoundManager.Instance.PlaySound(WinSound);
+    }
+    
+    public void PlayDie()
+    {
+        SoundManager.Instance.PlaySound(DieSound);
+    }
 
     #endregion
 
@@ -79,16 +89,6 @@ public class SoundSingleton : MonoBehaviour
     public void PlayClick()
     {
         SoundManager.Instance.PlaySound(ClickSound);
-    }
-    
-    public void PlayWin()
-    {
-        SoundManager.Instance.PlaySound(WinSound);
-    }
-    
-    public void PlayDie()
-    {
-        SoundManager.Instance.PlaySound(DieSound);
     }
     
     #endregion

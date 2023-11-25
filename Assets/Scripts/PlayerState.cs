@@ -120,6 +120,8 @@ public class PlayerState : MonoBehaviour
 
         solidState.SetActive(false);
         liquidState.SetActive(true);
+
+        SoundSingleton.Instance.PlayLiquidTransition();
     }
 
     void liquid_to_solid()
@@ -128,6 +130,8 @@ public class PlayerState : MonoBehaviour
 
         liquidState.SetActive(false);
         solidState.SetActive(true);
+
+        SoundSingleton.Instance.PlaySolidTransition();
     }
 
     void liquid_to_gas()
@@ -136,6 +140,8 @@ public class PlayerState : MonoBehaviour
 
         liquidState.SetActive(false);
         gasState.SetActive(true);
+
+        SoundSingleton.Instance.PlayGazTransition();
     }
 
     void gas_to_liquid()
@@ -144,6 +150,8 @@ public class PlayerState : MonoBehaviour
 
         gasState.SetActive(false);
         liquidState.SetActive(true);
+
+        SoundSingleton.Instance.PlayLiquidTransition();
     }
 
 }
