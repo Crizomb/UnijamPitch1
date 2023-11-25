@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireScript : MonoBehaviour
+public class IceScript : MonoBehaviour
 {
     public GameObject player;
     public GameObject logic;
-    public float fire_temp = 100;
+    public float ice_temp = -25f;
 
     private Temperature temperature;
 
@@ -26,7 +26,7 @@ public class FireScript : MonoBehaviour
         if (!(is_in_temp_zone) && isInTempZone())
         {
             is_in_temp_zone = true;
-            temperature.enterNewTempZone(fire_temp);
+            temperature.enterNewTempZone(ice_temp);
         }
         else if (is_in_temp_zone && !(isInTempZone()))
         {
