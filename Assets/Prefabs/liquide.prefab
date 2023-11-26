@@ -323,7 +323,7 @@ MonoBehaviour:
   renderer: {fileID: 7197093207321742303}
   player: {fileID: 0}
   sprite: {fileID: 6649460086540680392}
-  offset: 0.82
+  offset: 1
   wallJumpBonus: 3
   wallJumpAngle: 45
 --- !u!70 &584899992441388569

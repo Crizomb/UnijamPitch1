@@ -140,65 +140,13 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2031639917472177203, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2031639917472177203, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1667242122}
-    - target: {fileID: 2031639917472177203, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: jumpHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2031639917472177203, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: collisionDistance
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206719519867640902, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014618975821345394, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.822
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014618975821345394, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.951
-      objectReference: {fileID: 0}
-    - target: {fileID: 3595016948793449935, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.502
-      objectReference: {fileID: 0}
-    - target: {fileID: 3595016948793449935, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4043137680778406020, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4043137680778406020, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689703624446127572, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5732668698208371699, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1667242122}
-    - target: {fileID: 6438743467305761527, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.518
-      objectReference: {fileID: 0}
-    - target: {fileID: 6438743467305761527, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.923
-      objectReference: {fileID: 0}
     - target: {fileID: 8827792700194322709, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.78
@@ -238,14 +186,6 @@ PrefabInstance:
     - target: {fileID: 8827792700194322709, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9027705574341834500, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.856
-      objectReference: {fileID: 0}
-    - target: {fileID: 9027705574341834500, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -358,11 +298,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowSpeed: 2
-  yOffset: 1
+  xOffset: 0
+  yOffsethaut: -3
+  yOffsetbas: 2
   xtest: 1
-  ytest: 5
-  xmax: 100
-  target: {fileID: 0}
+  ytrigger: 0
+  target: {fileID: 1667242124}
 --- !u!1001 &748673562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1709,6 +1650,11 @@ Transform:
 --- !u!1 &1667242122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1879187763457967286, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+  m_PrefabInstance: {fileID: 13173911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1667242124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8827792700194322709, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
   m_PrefabInstance: {fileID: 13173911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
