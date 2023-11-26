@@ -193,9 +193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ice_temp: -25
-  temp_zone_radius: 4
+  temp_zone_radius: 2
+  speed: 1
+  depth: 0.5
   temperature: {fileID: 0}
   player: {fileID: 0}
   logic: {fileID: 0}
   halo: {fileID: 162635664229686501}
   is_in_temp_zone: 0
+  timer: 0
