@@ -5,9 +5,13 @@ using UnityEngine;
 public class FireScript : MonoBehaviour
 {
 
-    [Header("Ice settings")]
+    [Header("Fire settings")]
     public float fire_temp = 100f;
     public float temp_zone_radius = 4f;
+
+    [Header("Animation settings")]
+    public float speed = 100f;
+    public float depth = 4f;
 
     [Header("Debug")]
     [SerializeField]
@@ -72,6 +76,11 @@ public class FireScript : MonoBehaviour
 
     /*IEnumerator HaloAnimation()
     {
+        for(; ; )
+        {
 
+
+            yield return new WaitForSeconds(speed / 60);
+        }
     }*/
 }
