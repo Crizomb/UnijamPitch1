@@ -98,7 +98,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         int speedTemp = 0;
 
-        animator.SetBool("wallAttach", true);
+        animator.SetBool("wallAttach", false);
 
         if (Input.GetKey("d") && (isWalled != 1 || !isGrounded))
         {
