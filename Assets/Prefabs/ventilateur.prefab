@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2678026055103104779}
   - component: {fileID: 1844909481530717688}
   - component: {fileID: -7259480743756017739}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ventilateur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
