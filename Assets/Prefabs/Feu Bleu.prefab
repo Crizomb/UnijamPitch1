@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire_temp: 150
   temp_zone_radius: 2.67
+  heat_transfer_rate: 1.5
   speed: 100
   depth: 4
   temperature: {fileID: 0}
@@ -131,6 +132,7 @@ MonoBehaviour:
   halo1: {fileID: 4902365074162369596}
   halo2: {fileID: 6021137360005280700}
   is_in_temp_zone: 0
+  timer: 0
 --- !u!1001 &5805701244773681284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224790765530118968, guid: 622949314b8c79c4d83672f0c1965aec, type: 3}
       propertyPath: m_Range
-      value: 2.67
+      value: 5.34
       objectReference: {fileID: 0}
     - target: {fileID: 1768056143168137410, guid: 622949314b8c79c4d83672f0c1965aec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -252,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935114928833624235, guid: b637d3d0eca19bc4ca0b86953f5954f1, type: 3}
       propertyPath: m_Range
-      value: 2.67
+      value: 5.34
       objectReference: {fileID: 0}
     - target: {fileID: 5965801085972574390, guid: b637d3d0eca19bc4ca0b86953f5954f1, type: 3}
       propertyPath: m_Name

@@ -9,6 +9,7 @@ public class FireScript : MonoBehaviour
     [Header("Fire settings")]
     public float fire_temp = 80f;
     public float temp_zone_radius = 4f;
+    public float heat_transfer_rate = 1.5f;
 
     [Header("Animation settings")]
     public float speed = 100f;
@@ -60,7 +61,7 @@ public class FireScript : MonoBehaviour
         if (!(is_in_temp_zone) && isInTempZone())
         {
             is_in_temp_zone = true;
-            temperature.enterNewTempZone(fire_temp);
+            temperature.enterNewTempZone(fire_temp, heat_transfer_rate);
         }
         else if (is_in_temp_zone && !(isInTempZone()))
         {
@@ -69,10 +70,10 @@ public class FireScript : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x-temp_zone_radius,transform.position.y,0));
-    }
+    }*/
 
     bool isInTempZone()
     {
