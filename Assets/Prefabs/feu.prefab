@@ -198,8 +198,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7088281531105794068}
   - component: {fileID: 5167167590350169899}
-  - component: {fileID: 8854549355114499977}
   - component: {fileID: 2106391910024941900}
+  - component: {fileID: 8854549355114499977}
   m_Layer: 0
   m_Name: feu
   m_TagString: Untagged
@@ -276,6 +276,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2106391910024941900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033592834232237242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddca0c54d9b3a140bbb598076867587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire_temp: 100
+  temp_zone_radius: 2.67
+  temperature: {fileID: 0}
+  player: {fileID: 0}
+  logic: {fileID: 0}
+  halo1: {fileID: 1476576650617470792}
+  halo2: {fileID: 4471577423683759667}
+  is_in_temp_zone: 0
 --- !u!95 &8854549355114499977
 Animator:
   serializedVersion: 5
@@ -297,23 +317,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2106391910024941900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033592834232237242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddca0c54d9b3a140bbb598076867587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fire_temp: 100
-  temp_zone_radius: 2.67
-  temperature: {fileID: 0}
-  player: {fileID: 0}
-  logic: {fileID: 0}
-  halo1: {fileID: 1476576650617470792}
-  halo2: {fileID: 4471577423683759667}
-  is_in_temp_zone: 0

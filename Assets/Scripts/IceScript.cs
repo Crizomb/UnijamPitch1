@@ -25,9 +25,21 @@ public class IceScript : MonoBehaviour
     void OnValidate()
     {
         logic = GameObject.Find("Logic");
-        logic.TryGetComponent(out temperature);
+
+        if (logic == null)
+            Debug.LogError("Can't find the 'Logic' game object");
+        else
+            logic.TryGetComponent(out temperature);
+
+
         player = GameObject.Find("Player");
+
+        if (player == null)
+            Debug.LogError("Can't find the 'Player' game object");
+
+
         transform.GetChild(0).gameObject.TryGetComponent(out halo);
+
 
         if(halo is null)
         {
@@ -44,7 +56,7 @@ public class IceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!(is_in_temp_zone) && isInTempZone())
+        if (!is_in_temp_zone && isInTempZone())
         {
             is_in_temp_zone = true;
             temperature.enterNewTempZone(ice_temp);
