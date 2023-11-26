@@ -8,46 +8,55 @@ using UnityEngine.UIElements;
 public class CameraFollow : MonoBehaviour
 {
     public float FollowSpeed = 4f;
-    public float yOffset = 1f;
-    public float xtest = -3f;
-    public float ytest = 0f;
-    public float xmax = 100f;
+    private float yOffset;
+    public float xOffset = 0f;
+    public float yOffsethaut = -3f;
+    public float yOffsetbas = 2f;
+    public float xtest = 3f;
+    public float ytrigger = 0f;
     public Transform target;
     private PlayerState playerState;
 
     private void OnValidate()
     {
         GameObject.Find("Player").TryGetComponent(out playerState);
+        target = playerState.transform;
     }
 
 
     void Update()
     {
-        float newPosX = transform.position.x;
-        float newPosY = transform.position.y;
+        float newPosX = target.position.x;
+        float newPosY = target.position.y;
 
-        newPosY = (target.position.y);
 
-        if (target.position.x > xtest)
+        /*if (target.position.x > xtest)
             {
                 newPosX = (target.position.x);
-            }
+            }*
 
+        /*if (target.position.y - transform.position.y > 1)
+        {
+            newPosY = target.position.y;
+            Debug.Log("newpos");
+        }*/
 
         if (playerState.IsPlayerGrounded())
         {
-            if (target.position.y > 2)
+            if (target.position.y > ytrigger)
             {
-                yOffset = -3f;               
+                yOffset = yOffsethaut;
+                Debug.Log("-1");
             }
             else
             {
-                yOffset = 4f;
+                yOffset = yOffsetbas;
+                Debug.Log("+1");
             }
         }
         
         
-        Vector3 newPos = new Vector3(newPosX, newPosY + yOffset, -14f);
+        Vector3 newPos = new Vector3(newPosX + xOffset, newPosY + yOffset, -14f);
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
 
     }
