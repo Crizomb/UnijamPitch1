@@ -18,6 +18,7 @@ public class CameraFollow : MonoBehaviour
     private void OnValidate()
     {
         GameObject.Find("Player").TryGetComponent(out playerState);
+        target = playerState.transform;
     }
 
 
