@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float FollowSpeed = 6f;
+    public float FollowSpeed = 4f;
     public float yOffset = 1f;
-    public float xtest = 1f;
+    public float xtest = -3f;
     public float ytest = 0f;
     public float xmax = 100f;
     public Transform target;
-    private Rigidbody2D targetRigidbody;
+    private PlayerState playerState;
 
-    private void Start()
+    private void OnValidate()
     {
-        targetRigidbody = target.GetComponent<Rigidbody2D>();
+        GameObject.Find("Player").TryGetComponent(out playerState);
     }
     // Update is called once per frame
     void Update()
@@ -26,16 +27,17 @@ public class CameraFollow : MonoBehaviour
 
         newPosY = (target.position.y);
 
-
-        if (target.position.x > xtest && target.position.x < xmax)
+        if (target.position.x > xtest)
             {
                 newPosX = (target.position.x);
             }
-        if (targetRigidbody != null && targetRigidbody.velocity.y == 0)
+
+
+        if (playerState.IsPlayerGrounded())
         {
-            if (target.position.y > 2.2)
+            if (target.position.y > 2)
             {
-                yOffset = -3f;
+                yOffset = -3f;               
             }
             else
             {
