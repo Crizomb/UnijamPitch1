@@ -4,20 +4,41 @@ using UnityEngine;
 
 public class IceScript : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject logic;
+
+    [Header("Ice settings")]
     public float ice_temp = -25f;
-
-    private Temperature temperature;
-
     public float temp_zone_radius = 4f;
 
-    bool is_in_temp_zone = false;
+    [Header("Debug")]
+    [SerializeField]
+    private Temperature temperature;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject logic;
+    [SerializeField]
+    private Light halo;
+    [SerializeField]
+    private bool is_in_temp_zone = false;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void OnValidate()
     {
-        temperature = logic.GetComponent<Temperature>();
+        logic = GameObject.Find("Logic");
+        logic.TryGetComponent(out temperature);
+        player = GameObject.Find("Player");
+        transform.GetChild(0).gameObject.TryGetComponent(out halo);
+
+        if(halo is null)
+        {
+            Debug.Log("Can't find the halo");
+        }
+        else
+        {
+            halo.range = temp_zone_radius;
+        }
+
+
     }
 
     // Update is called once per frame

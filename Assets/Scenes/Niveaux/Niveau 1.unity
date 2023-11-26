@@ -290,10 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ae80e1c12e1e140a12e629be2fe6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  yOffset: 1
+  FollowSpeed: 3
+  yOffset: 5
   xtest: 1
-  ytest: 5
+  ytest: 0
   xmax: 100
   target: {fileID: 412771123}
 --- !u!1001 &296268556
@@ -446,6 +446,8 @@ MonoBehaviour:
   collisionDistance: 0.1
   isGrounded: 0
   isWalled: 0
+  animator: {fileID: 0}
+  rg: {fileID: 412771121}
   wallJumpBonus: 8
   wallJumpAngle: 45
 --- !u!61 &412771119
@@ -515,6 +517,8 @@ MonoBehaviour:
   collisionDistance: 0.1
   isGrounded: 0
   isWalled: 0
+  animator: {fileID: 0}
+  rg: {fileID: 412771121}
 --- !u!50 &412771121
 Rigidbody2D:
   serializedVersion: 4
@@ -540,7 +544,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &412771122
 SpriteRenderer:
@@ -640,6 +644,10 @@ MonoBehaviour:
   logic: {fileID: 1542125563}
   solid_liquid_temp: 0
   liquid_gas_temp: 100
+  solidState: {fileID: 0}
+  liquidState: {fileID: 0}
+  gasState: {fileID: 0}
+  state: 0
 --- !u!1001 &625629819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,13 +725,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: box
       objectReference: {fileID: 0}
+    - target: {fileID: 2899377238486351053, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 23.53
       objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 4694392015391595025, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -757,7 +769,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8123101417881254827, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8123101417881254827, guid: 8e1534496f372bb4095a40e12159f53a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

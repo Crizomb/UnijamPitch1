@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.07978451, b: 0.04150939, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 1.7800001
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -76,7 +76,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -139,7 +139,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.3888728, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 3
+  m_Range: 2.67
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -217,7 +217,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.42, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5461, y: 0.5461, z: 0.5461}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2339565589076594393}
@@ -309,7 +309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddca0c54d9b3a140bbb598076867587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_temp: 100
+  temp_zone_radius: 2.67
+  temperature: {fileID: 0}
   player: {fileID: 0}
   logic: {fileID: 0}
-  fire_temp: 100
-  temp_zone_radius: 3
+  halo1: {fileID: 1476576650617470792}
+  halo2: {fileID: 4471577423683759667}
+  is_in_temp_zone: 0

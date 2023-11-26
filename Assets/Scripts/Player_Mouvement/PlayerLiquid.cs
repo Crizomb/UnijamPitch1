@@ -24,6 +24,7 @@ public class PlayerLiquid : PlayerMouvement
             //Debug.Log("Jump!");
             Vector2 direction = new Vector2(0, 1);
             rg.AddForce(direction * jumpHeight, ForceMode2D.Impulse);
+            SoundSingleton.Instance.PlayLiquidJump();
         }
         else
         {

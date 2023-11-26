@@ -262,7 +262,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &2836660507011649973
 MonoBehaviour:
@@ -286,6 +286,10 @@ MonoBehaviour:
   collisionDistance: 0.06
   isGrounded: 0
   isWalled: 0
+  animator: {fileID: 6405734213973028070}
+  rg: {fileID: 247731250946303234}
+  renderer: {fileID: 8006115861042756660}
+  player: {fileID: 0}
   wallJumpBonus: 3
   wallJumpAngle: 45
 --- !u!70 &584899992441388569

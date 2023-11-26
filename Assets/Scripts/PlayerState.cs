@@ -13,6 +13,7 @@ public enum State
 
 public class PlayerState : MonoBehaviour
 {
+
     public GameObject logic;
     public float solid_liquid_temp = 0;
     public float liquid_gas_temp = 100;
@@ -31,6 +32,9 @@ public class PlayerState : MonoBehaviour
     [Space]
 
     private Temperature temperature;
+    private PlayerGaz gasScript;
+    private PlayerLiquid liquidScript;
+    private PlayerSolid solidScript;
 
     public State getState()
     {
@@ -38,6 +42,14 @@ public class PlayerState : MonoBehaviour
         return state;
     }
 
+
+    void OnValidate()
+    {
+        gasState.TryGetComponent(out gasScript);
+        liquidState.TryGetComponent(out liquidScript);
+        solidState.TryGetComponent(out solidScript);
+        logic = GameObject.Find("Logic");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +60,24 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(temperature.slimeTemp);
         checkStateChange();
+    }
+
+    public bool IsPlayerGrounded()
+    {
+        switch(state)
+        {
+            case State.Solid:
+                return solidScript.isGrounded;
+
+            case State.Liquid:
+                return liquidScript.isGrounded;
+
+            case State.Gas:
+                return gasScript.isGrounded;
+        }
+
+        return false;
     }
 
     void checkStateChange()
@@ -94,6 +122,8 @@ public class PlayerState : MonoBehaviour
 
         solidState.SetActive(false);
         liquidState.SetActive(true);
+
+        SoundSingleton.Instance.PlayLiquidTransition();
     }
 
     void liquid_to_solid()
@@ -102,6 +132,8 @@ public class PlayerState : MonoBehaviour
 
         liquidState.SetActive(false);
         solidState.SetActive(true);
+
+        SoundSingleton.Instance.PlaySolidTransition();
     }
 
     void liquid_to_gas()
@@ -110,6 +142,8 @@ public class PlayerState : MonoBehaviour
 
         liquidState.SetActive(false);
         gasState.SetActive(true);
+
+        SoundSingleton.Instance.PlayGazTransition();
     }
 
     void gas_to_liquid()
@@ -118,6 +152,8 @@ public class PlayerState : MonoBehaviour
 
         gasState.SetActive(false);
         liquidState.SetActive(true);
+
+        SoundSingleton.Instance.PlayLiquidTransition();
     }
 
 }

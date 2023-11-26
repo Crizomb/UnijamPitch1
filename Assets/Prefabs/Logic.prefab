@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d65185af5c26f94ebddfd5d5b8c1aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTemp: 20
+  thermometerSlider: {fileID: 0}
+  RoomTemperatureGauge: {fileID: 0}
+  roomTemp: 50
   slimeTemp: 0
   localTemp: 0
-  heatTransferRate: 0.1
+  heatTransferRate: 1

@@ -38,7 +38,7 @@ public abstract class PlayerMouvement : MonoBehaviour
     [SerializeField]
     protected float collisionDistance;
     [SerializeField]
-    protected bool isGrounded;
+    public bool isGrounded;
     [SerializeField]
     protected int isWalled;
 
@@ -49,9 +49,14 @@ public abstract class PlayerMouvement : MonoBehaviour
     protected Animator animator;
     [SerializeField]
     protected Rigidbody2D rg;
+    [SerializeField]
+    protected new SpriteRenderer renderer;
+    [SerializeField]
+    protected GameObject player;
 
 
     private bool bufferJump;
+    private int lastDirection;
 
     /*private void OnDrawGizmos()
     {
@@ -64,8 +69,11 @@ public abstract class PlayerMouvement : MonoBehaviour
     {
         bool gotComponent1 = TryGetComponent(out rg);
         bool gotComponent2 = TryGetComponent(out animator);
+        bool gotComponent3 = TryGetComponent(out renderer);
 
-        if (!(gotComponent1 && gotComponent2))
+        player = GameObject.Find("Player");
+
+        if (!(gotComponent1 && gotComponent2 && gotComponent3))
             Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
     }
 
@@ -77,27 +85,32 @@ public abstract class PlayerMouvement : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        lastDirection = 0;
+    }
+
     void FixedUpdate()
     {
         IsPlayerGrounded();
         isWalled = IsPlayerWalled();
 
 
-        int speed = 0;
+        int speedTemp = 0;
         bool isJumping = false;
 
 
         if (Input.GetKey("d") && isWalled != 1)
         {
             InputRight();
-            speed = 1;
+            speedTemp = 1;
             //Debug.Log("Input right");
         }
 
         if (Input.GetKey("q") && isWalled != -1)
         {
             InputLeft();
-            speed = -1;
+            speedTemp = -1;
             //Debug.Log("Input left");
         }
 
@@ -112,8 +125,23 @@ public abstract class PlayerMouvement : MonoBehaviour
             InputDown();*/
 
         animator.SetBool("isJumping", isJumping);
-        animator.SetFloat("speed", speed);
+        animator.SetFloat("speed", Mathf.Abs(speedTemp));
 
+        if(speedTemp < 0){
+            renderer.flipX = true;
+            lastDirection = speedTemp;
+        }
+        else if(speedTemp == 0)
+        {
+            renderer.flipX = lastDirection == -1;
+        }
+        else
+        {
+            renderer.flipX = false;
+            lastDirection = speedTemp;
+        }
+
+        
         int yVel = -1;
 
         if (rg.velocity.y > 0)
@@ -121,6 +149,9 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         animator.SetInteger("verticalDirection", yVel);
 
+        Vector3 tempPos = transform.position;
+        player.transform.position = transform.position;
+        transform.position = tempPos;
 
     }
 
