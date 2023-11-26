@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.6473124, b: 1, a: 1}
   m_Intensity: 0.67
-  m_Range: 4
+  m_Range: 2
   m_SpotAngle: 52
   m_InnerSpotAngle: 1
   m_CookieSize: 0.19
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ice_temp: -50
-  temp_zone_radius: 2
+  temp_zone_radius: 1
   heat_transfer_rate: 1.5
   speed: 1
   depth: 0.5
