@@ -42,7 +42,7 @@ public class CameraFollow : MonoBehaviour
             }
             else
             {
-                yOffset = 3f;
+                yOffset = 4f;
             }
         }
         
