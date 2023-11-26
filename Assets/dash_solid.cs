@@ -21,50 +21,52 @@ public class dash_solid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (playerState.getState() == State.Solid)
-        if (Time.time - lastDashTime >= cooldownDuration)
+        if (playerState.getState() == State.Solid)
         {
+            if (Time.time - lastDashTime >= cooldownDuration)
             {
-                if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Q))
                 {
-                    if (Time.time - lastKeyPressTime < cooldownDuration && lastKeyPressed == (Input.GetKey(KeyCode.D) ? KeyCode.D : KeyCode.Q))
+                    if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Q))
                     {
-                        // Perform dash
-                        Dash(Input.GetKey(KeyCode.D) ? Vector2.right : Vector2.left);
+                        if (Time.time - lastKeyPressTime < cooldownDuration && lastKeyPressed == (Input.GetKey(KeyCode.D) ? KeyCode.D : KeyCode.Q))
+                        {
+                            // Perform dash
+                            Dash(Input.GetKey(KeyCode.D) ? Vector2.right : Vector2.left);
+                            isDashing = true;
+                            lastDashTime = Time.time; // Update the last dash time
+                        }
+                        else
+                        {
+                            // Update the last key press time and key pressed
+                            lastKeyPressTime = Time.time;
+                            lastKeyPressed = Input.GetKey(KeyCode.D) ? KeyCode.D : KeyCode.Q;
+                        }
+                    }
+                }
+
+                void Dash(Vector2 direction)
+                {
+                    if (!isDashing)
+                    {
                         isDashing = true;
-                        lastDashTime = Time.time; // Update the last dash time
+                        StartCoroutine(DashCoroutine(direction));
                     }
-                    else
+                }
+
+                IEnumerator DashCoroutine(Vector2 direction)
+                {
+                    float startTime = Time.time;
+
+                    while (Time.time < startTime + dashDuration)
                     {
-                        // Update the last key press time and key pressed
-                        lastKeyPressTime = Time.time;
-                        lastKeyPressed = Input.GetKey(KeyCode.D) ? KeyCode.D : KeyCode.Q;
+                        // Move the player in the specified direction
+                        transform.Translate(direction * dashSpeed * Time.deltaTime);
+
+                        yield return null;
                     }
+
+                    isDashing = false;
                 }
-            }
-
-            void Dash(Vector2 direction)
-            {
-                if (!isDashing)
-                {
-                    isDashing = true;
-                    StartCoroutine(DashCoroutine(direction));
-                }
-            }
-
-            IEnumerator DashCoroutine(Vector2 direction)
-            {
-                float startTime = Time.time;
-
-                while (Time.time < startTime + dashDuration)
-                {
-                    // Move the player in the specified direction
-                    transform.Translate(direction * dashSpeed * Time.deltaTime);
-
-                    yield return null;
-                }
-
-                isDashing = false;
             }
         }
     }
