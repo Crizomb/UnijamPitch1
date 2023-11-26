@@ -53,7 +53,12 @@ public abstract class PlayerMouvement : MonoBehaviour
     protected new SpriteRenderer renderer;
     [SerializeField]
     protected GameObject player;
+    [SerializeField]
+    protected GameObject sprite;
+    [SerializeField]
+    protected float offset;
 
+    protected float currentOffsetX;
 
     private bool bufferJump;
     private int lastDirection;
@@ -68,21 +73,25 @@ public abstract class PlayerMouvement : MonoBehaviour
     void OnValidate()   // Assignation dès que l'éditeur s'update (changement de valeur de quelque chose)
     {
         bool gotComponent1 = TryGetComponent(out rg);
-        bool gotComponent2 = TryGetComponent(out animator);
-        bool gotComponent3 = TryGetComponent(out renderer);
+
+        sprite = transform.GetChild(0).gameObject;
+
+        bool gotComponent2 = sprite.TryGetComponent(out animator);
+        bool gotComponent3 = sprite.TryGetComponent(out renderer);
 
         player = GameObject.Find("Player");
 
         if (!(gotComponent1 && gotComponent2 && gotComponent3))
-            Debug.LogError("Erreur pas de component RG2D pour "+gameObject+" !");
+            Debug.LogError("Erreur components manquants pour "+gameObject+" !");
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z") || Input.GetKeyDown("Space"))
         {
             bufferJump = true;
         }
+        sprite.transform.localPosition = new Vector3(currentOffsetX,0,0);
     }
 
     void Start()
@@ -90,15 +99,13 @@ public abstract class PlayerMouvement : MonoBehaviour
         lastDirection = 0;
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         IsPlayerGrounded();
         isWalled = IsPlayerWalled();
 
 
         int speedTemp = 0;
-
-        animator.SetBool("wallAttach", false);
 
         if (Input.GetKey("d") && (isWalled != 1 || !isGrounded))
         {

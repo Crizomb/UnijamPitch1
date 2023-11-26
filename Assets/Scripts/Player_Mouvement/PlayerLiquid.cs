@@ -9,12 +9,20 @@ public class PlayerLiquid : PlayerMouvement
     public int wallJumpAngle;
 
 
+    protected override void FixedUpdate()
+    {
+        UpdateAnimationWalling();
+
+        base.FixedUpdate();
+    }
+
+
     public override void InputLeft()
     {
         if (isWalled == -1 && !isGrounded)
         {
             rg.velocity = Vector3.zero;
-            animator.SetBool("wallAttach", true);
+            UpdateAnimationWalling(true,-1);
         }
         else
         {
@@ -26,11 +34,25 @@ public class PlayerLiquid : PlayerMouvement
         if (isWalled == 1 && !isGrounded)
         {
             rg.velocity = Vector3.zero;
-            animator.SetBool("wallAttach", true);
+            UpdateAnimationWalling(true,1);
         }
         else
         {
             base.InputRight();
+        }
+    }
+
+
+    private void UpdateAnimationWalling(bool isWalling = false, int facing = 1)
+    {
+        animator.SetBool("wallAttach", isWalling);
+        if(isWalling)
+        {
+            currentOffsetX = offset*(facing/Mathf.Abs(facing));
+        }
+        else
+        {
+            currentOffsetX = 0;
         }
     }
 
