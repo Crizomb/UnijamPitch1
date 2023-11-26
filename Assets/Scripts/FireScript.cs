@@ -69,10 +69,10 @@ public class FireScript : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x-temp_zone_radius,transform.position.y,0));
-    }
+    }*/
 
     bool isInTempZone()
     {
