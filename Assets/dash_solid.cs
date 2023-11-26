@@ -14,7 +14,7 @@ public class dash_solid : MonoBehaviour
     private KeyCode lastKeyPressed;
     private float lastKeyPressTime;
 
-    private bool isDashing = false;
+    public bool isDashing = false;
     // Start is called before the first frame update
 
 
