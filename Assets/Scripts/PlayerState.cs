@@ -13,6 +13,7 @@ public enum State
 
 public class PlayerState : MonoBehaviour
 {
+
     public GameObject logic;
     public float solid_liquid_temp = 0;
     public float liquid_gas_temp = 100;
@@ -47,6 +48,7 @@ public class PlayerState : MonoBehaviour
         gasState.TryGetComponent(out gasScript);
         liquidState.TryGetComponent(out liquidScript);
         solidState.TryGetComponent(out solidScript);
+        logic = GameObject.Find("Logic");
     }
 
     // Start is called before the first frame update
