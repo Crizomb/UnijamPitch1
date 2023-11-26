@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         SoundSingleton.Instance.PlayClick();
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Lvl tuto");
     }
 
     public void Options()
