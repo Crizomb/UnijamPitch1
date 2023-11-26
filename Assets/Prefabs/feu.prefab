@@ -290,6 +290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire_temp: 100
   temp_zone_radius: 2.67
+  speed: 100
+  depth: 4
   temperature: {fileID: 0}
   player: {fileID: 0}
   logic: {fileID: 0}

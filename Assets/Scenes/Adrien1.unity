@@ -123,6 +123,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &237174761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2760974749373414557, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+  m_PrefabInstance: {fileID: 4195223993266017110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &237174768
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237174761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019441186, y: -0.025924426}
+  m_Size: {x: 1.8508782, y: 1.3241626}
+  m_Direction: 1
 --- !u!114 &556866517 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8575411763360096897, guid: 72cd08b94a0ec5746b53ce8fb31ebd66, type: 3}
@@ -1614,6 +1654,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 973913730}
+    - target: {fileID: 2206719519867640902, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760974749373414557, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199504688280319730, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5732668698208371699, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
       propertyPath: player
       value: 
@@ -1658,10 +1710,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4411921260400738126, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2760974749373414557, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 237174768}
   m_SourcePrefab: {fileID: 100100000, guid: 68d0e5d759389704da77e12c0d03e419, type: 3}
 --- !u!1001 &6155008728086359055
 PrefabInstance:
