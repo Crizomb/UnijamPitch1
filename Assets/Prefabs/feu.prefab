@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire_temp: 100
   temp_zone_radius: 2
+  heat_transfer_rate: 1.5
   speed: 1
   depth: 0.5
   temperature: {fileID: 0}

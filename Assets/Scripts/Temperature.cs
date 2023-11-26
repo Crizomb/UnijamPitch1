@@ -12,13 +12,17 @@ public class Temperature : MonoBehaviour
     [SerializeField]
     private GameObject RoomTemperatureGauge; // si Bug Drag and drop le GameObject RoomTemperatureGauge dans l'inspector (se trouve dans le canvas)
 
+    [SerializeField]
+    private float heatTransferBase;
+
     private RectTransform roomTemperatureGaugeRectTransform;
+
 
 
     public float roomTemp = 20; // Temperature de la salle
     public float slimeTemp; // Temperature du slime
     public float localTemp; // Temperature autour du slime (change entre zone chaude/froide)
-    public float heatTransferRate = 0.3f; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
+    private float heatTransferRate; // Vitesse de transfert de chaleur (plus c'est grand, plus le changement de temperature est rapide)
 
     // Start is called before the first frame update
     void Start()
@@ -36,14 +40,16 @@ public class Temperature : MonoBehaviour
         
     }
 
-    public void enterNewTempZone(float newLocalTemp)
+    public void enterNewTempZone(float newLocalTemp, float newTransferRate)
     {
         localTemp = newLocalTemp;
+        heatTransferRate = newTransferRate;
     }
 
     public void leaveTempZone()
     {
         localTemp = roomTemp;
+        heatTransferRate = heatTransferBase;
     }
 
     // Update is called once per frame
