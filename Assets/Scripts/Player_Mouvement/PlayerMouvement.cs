@@ -79,7 +79,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z") || Input.GetKeyDown("Space"))
         {
             bufferJump = true;
         }
