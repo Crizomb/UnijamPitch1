@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
 
     [Header("Fire settings")]
-    public float fire_temp = 100f;
+    public float fire_temp = 80f;
     public float temp_zone_radius = 4f;
 
     [Header("Animation settings")]
     public float speed = 100f;
-    public float depth = 4f;
+    public float depth = 0.5f;
 
     [Header("Debug")]
     [SerializeField]
@@ -27,6 +28,9 @@ public class FireScript : MonoBehaviour
     [SerializeField]
     private bool is_in_temp_zone = false;
 
+    [SerializeField]
+    private float timer;
+
     void OnValidate()
     {
         logic = GameObject.Find("Logic");
@@ -41,12 +45,16 @@ public class FireScript : MonoBehaviour
         }
         else
         {
-            halo1.range = temp_zone_radius;
-            halo2.range = Mathf.Min(temp_zone_radius*fire_temp/150f, temp_zone_radius);
+            halo1.range = temp_zone_radius*2;
+            halo2.range = Mathf.Min(temp_zone_radius*fire_temp/150f, temp_zone_radius)*2;
         }
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        StartCoroutine("HaloAnimation");
+    }
+
     void Update()
     {
         if (!(is_in_temp_zone) && isInTempZone())
@@ -59,6 +67,11 @@ public class FireScript : MonoBehaviour
             is_in_temp_zone = false;
             temperature.leaveTempZone();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x-temp_zone_radius,transform.position.y,0));
     }
 
     bool isInTempZone()
@@ -74,13 +87,14 @@ public class FireScript : MonoBehaviour
         }
     }
 
-    /*IEnumerator HaloAnimation()
+    IEnumerator HaloAnimation()
     {
-        for(; ; )
+        timer = 0;
+        for (; ; )
         {
-
-
-            yield return new WaitForSeconds(speed / 60);
+            timer += Time.deltaTime;
+            halo2.range = (depth*temp_zone_radius*(Mathf.Sin(Mathf.PI*timer*speed)+1)/2)*2;
+            yield return null;
         }
-    }*/
+    }
 }
