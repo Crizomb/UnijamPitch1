@@ -58,11 +58,11 @@ public abstract class PlayerMouvement : MonoBehaviour
     private bool bufferJump;
     private int lastDirection;
 
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(collisionLeftCheck2.position, collisionLeftCheck2.position + Vector3.down * collisionDistance);
-    }*/
+        Gizmos.DrawLine(collisionRightCheck2.position, collisionRightCheck2.position + Vector3.right * collisionDistance);
+    }
 
 
     void OnValidate()   // Assignation dès que l'éditeur s'update (changement de valeur de quelque chose)
@@ -97,17 +97,16 @@ public abstract class PlayerMouvement : MonoBehaviour
 
 
         int speedTemp = 0;
-        bool isJumping = false;
 
 
-        if (Input.GetKey("d") && isWalled != 1)
+        if (Input.GetKey("d") && (isWalled != 1 || !isGrounded))
         {
             InputRight();
             speedTemp = 1;
             //Debug.Log("Input right");
         }
 
-        if (Input.GetKey("q") && isWalled != -1)
+        if (Input.GetKey("q") && (isWalled != -1 || !isGrounded))
         {
             InputLeft();
             speedTemp = -1;
@@ -117,7 +116,6 @@ public abstract class PlayerMouvement : MonoBehaviour
         if (bufferJump)
         {
             InputUp();
-            isJumping = true;
             bufferJump = false;
         }
 
@@ -155,8 +153,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     }
 
-
-    public void InputLeft()
+    public virtual void InputLeft()
     {
         //Debug.Log("Going left");
         Vector3 direction = new Vector2(-1, 0);
@@ -164,7 +161,7 @@ public abstract class PlayerMouvement : MonoBehaviour
         transform.position += direction*speed/60;
     }
 
-    public void InputRight()
+    public virtual void InputRight()
     {
         //Debug.Log("Going right");
         Vector3 direction = new Vector2(1, 0);
@@ -177,13 +174,6 @@ public abstract class PlayerMouvement : MonoBehaviour
     public abstract void InputDown(); // Depends on the state of the player
 
 
-
-    public void UpdateAnimation()
-    {
-        
-    }
-
-
     public void IsPlayerGrounded()
     {
         bool isG = rg.velocity.y < 0.1 && rg.velocity.y > -0.1;
@@ -191,7 +181,7 @@ public abstract class PlayerMouvement : MonoBehaviour
         if (isG)
         {
             isG = false;
-            for(float i = 0f; i<=raycastPrecision; i++)
+            for(float i = 1f; i<raycastPrecision; i++)
             {
                 isG = Physics2D.Raycast(Vector2.Lerp(collisionLeftCheck2.position, collisionRightCheck2.position, i / raycastPrecision), Vector2.down, collisionDistance);
                 if (isG)
@@ -228,7 +218,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         for (float i = 0f; i <= raycastPrecision; i++)
         {
-            if(Physics2D.Raycast(Vector2.Lerp(collisionRightCheck1.position, collisionRightCheck2.position, i / raycastPrecision), Vector2.right, 0.1f))
+            if(Physics2D.Raycast(Vector2.Lerp(collisionRightCheck1.position, collisionRightCheck2.position, i / raycastPrecision), Vector2.right, collisionDistance))
             {
                 isWalled = 1;
                 break;

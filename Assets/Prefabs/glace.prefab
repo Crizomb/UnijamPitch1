@@ -192,10 +192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079c617e8d8ffe142b7769af8891e9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ice_temp: -25
-  temp_zone_radius: 4
+  ice_temp: -50
+  temp_zone_radius: 2
+  heat_transfer_rate: 1.5
+  speed: 1
+  depth: 0.5
   temperature: {fileID: 0}
   player: {fileID: 0}
   logic: {fileID: 0}
   halo: {fileID: 162635664229686501}
   is_in_temp_zone: 0
+  timer: 0

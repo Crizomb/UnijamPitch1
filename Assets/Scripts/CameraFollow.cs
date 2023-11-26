@@ -19,7 +19,8 @@ public class CameraFollow : MonoBehaviour
     {
         GameObject.Find("Player").TryGetComponent(out playerState);
     }
-    // Update is called once per frame
+
+
     void Update()
     {
         float newPosX = transform.position.x;
