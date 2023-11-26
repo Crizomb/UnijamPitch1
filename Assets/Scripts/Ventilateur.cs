@@ -22,8 +22,11 @@ public class Ventilateur : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("ok");
-        State state = collision.gameObject.GetComponent<PlayerState>().getState();
+        // colliding with player and getting state
+        GameObject gameObject = collision.gameObject;
+
+        PlayerState playerState = gameObject.GetComponent<PlayerState>();
+        State state = playerState.getState();
         if (state == State.Solid)
         {
             force = 100f;
@@ -38,6 +41,7 @@ public class Ventilateur : MonoBehaviour
         }
         Debug.Log(force);
         Vector2 ventilator_direction = transform.rotation * Vector2.up;
+        Debug.Log(ventilator_direction);
         collision.attachedRigidbody.AddForce(ventilator_direction * force);
         
     }
