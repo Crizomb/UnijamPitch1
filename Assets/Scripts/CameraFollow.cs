@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float FollowSpeed = 2f;
+    public float FollowSpeed = 6f;
     public float yOffset = 1f;
     public float xtest = 1f;
-    public float ytest = 5f;
+    public float ytest = 0f;
     public float xmax = 100f;
     public Transform target;
     private Rigidbody2D targetRigidbody;
