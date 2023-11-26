@@ -9,24 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MenuPrincipal.unity
     guid: 8d500511b6acea844b3ecf20a73ac5aa
   - enabled: 1
+    path: Assets/Scenes/Niveaux/Lvl tuto.unity
+    guid: f3cab89622823184ba2f2d93456eb4d8
+  - enabled: 1
+    path: Assets/Scenes/Level2Ryad.unity
+    guid: 5ec20c2766b8f0d42b12d2c503e14f4a
+  - enabled: 0
     path: Assets/Scenes/Niveaux/Niveau 2.unity
     guid: 8f95be45525eb40469dafede6868e1f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ryad.unity
     guid: f12e5a713743a134e8f24aadc45a4037
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlagTest/Flag1.unity
     guid: b8362c1c4b290334092e2d80f8ff5098
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlagTest/Flag2.unity
     guid: 2bdc0f3d6e5abc94397da665946613e5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveaux/Niveau 1.unity
     guid: 70aba17956e63e346adafe8509536017
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveaux/Niveau 2.unity
     guid: 8f95be45525eb40469dafede6868e1f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveaux/Niveau 3.unity
     guid: fafec5fa719a13f44904d7718d89f91a
   - enabled: 1
@@ -38,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Options.unity
     guid: ed5748e3dab224148812581eb47ba045
-  - enabled: 1
-    path: Assets/Scenes/Niveaux/Lvl tuto.unity
-    guid: f3cab89622823184ba2f2d93456eb4d8
   m_configObjects: {}
