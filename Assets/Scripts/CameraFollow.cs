@@ -23,15 +23,16 @@ public class CameraFollow : MonoBehaviour
     {
         float newPosX = transform.position.x;
         float newPosY = transform.position.y;
-        
-          
 
-            if (target.position.x > xtest && target.position.x < xmax)
+        newPosY = (target.position.y);
+
+
+        if (target.position.x > xtest && target.position.x < xmax)
             {
                 newPosX = (target.position.x);
             }
-
-            newPosY = (target.position.y);
+        if (targetRigidbody != null && targetRigidbody.velocity.y == 0)
+        {
             if (target.position.y > 2.2)
             {
                 yOffset = -3f;
@@ -40,8 +41,10 @@ public class CameraFollow : MonoBehaviour
             {
                 yOffset = 3f;
             }
+        }
         
-        Vector3 newPos = new Vector3(newPosX, newPosY + yOffset, -10f);
+        
+        Vector3 newPos = new Vector3(newPosX, newPosY + yOffset, -14f);
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
         Debug.Log(newPos);
     }
