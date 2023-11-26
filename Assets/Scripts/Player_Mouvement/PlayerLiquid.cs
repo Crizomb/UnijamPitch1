@@ -9,10 +9,30 @@ public class PlayerLiquid : PlayerMouvement
     public int wallJumpAngle;
 
 
-    /*public override void InputLeft()
+    public override void InputLeft()
     {
+        if (isWalled == -1 && !isGrounded)
+        {
+            rg.velocity = Vector3.zero;
+        }
+        else
+        {
+            base.InputLeft();
+        }
 
-    }*/
+    }
+    public override void InputRight()
+    {
+        if (isWalled == 1 && !isGrounded)
+        {
+            rg.velocity = Vector3.zero;
+        }
+        else
+        {
+            base.InputRight();
+        }
+
+    }
 
 
     public override void InputDown()
@@ -34,7 +54,7 @@ public class PlayerLiquid : PlayerMouvement
         }
         else
         {
-            int wall = IsPlayerWalled();
+            int wall = isWalled;
 
             if(wall!=0)
             {
