@@ -18,6 +18,7 @@ public class CameraFollow : MonoBehaviour
     private void OnValidate()
     {
         GameObject.Find("Player").TryGetComponent(out playerState);
+        target = playerState.transform;
     }
 
 
@@ -42,7 +43,7 @@ public class CameraFollow : MonoBehaviour
             }
             else
             {
-                yOffset = 3f;
+                yOffset = 4f;
             }
         }
         
