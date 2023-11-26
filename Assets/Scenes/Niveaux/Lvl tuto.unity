@@ -4111,10 +4111,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowSpeed: 4
-  yOffset: 1
+  xOffset: 3
+  yOffsethaut: -3
+  yOffsetbas: 2
   xtest: -3
-  ytest: 0
-  xmax: 100
+  ytrigger: 0
   target: {fileID: 352636160}
 --- !u!1001 &446042684
 PrefabInstance:
