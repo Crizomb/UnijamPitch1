@@ -14,31 +14,31 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         SoundSingleton.Instance.PlayClick();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("");
+        SceneManager.LoadScene("");
     }
 
     public void Options()
     {
         SoundSingleton.Instance.PlayClick();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Options", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Options", LoadSceneMode.Additive);
     }
 
     public void Credits1()
     {
         SoundSingleton.Instance.PlayClick();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Crédits1", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Crédits1", LoadSceneMode.Additive);
     }
 
     public void Credits2()
     {
         SoundSingleton.Instance.PlayClick();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Crédits2", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Crédits2", LoadSceneMode.Additive);
     }
 
-    public void Menu()
+    public void GoBack(string scene)
     {
         SoundSingleton.Instance.PlayClick();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPrincipal", LoadSceneMode.Additive);
+        SceneManager.UnloadScene(scene);  
     }
 
 
