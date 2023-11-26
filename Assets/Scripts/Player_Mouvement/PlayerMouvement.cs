@@ -98,6 +98,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
         int speedTemp = 0;
 
+        animator.SetBool("wallAttach", true);
 
         if (Input.GetKey("d") && (isWalled != 1 || !isGrounded))
         {
@@ -125,7 +126,7 @@ public abstract class PlayerMouvement : MonoBehaviour
         animator.SetBool("isJumping", rg.velocity.y < -0.01f || rg.velocity.y > 0.01f);
         animator.SetFloat("speed", Mathf.Abs(speedTemp));
 
-        if(speedTemp < 0){
+        if (speedTemp < 0){
             renderer.flipX = true;
             lastDirection = speedTemp;
         }

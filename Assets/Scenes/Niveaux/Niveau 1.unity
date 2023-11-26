@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowSpeed: 6
   yOffset: 1
-  xtest: 1
+  xtest: -3
   ytest: 0
   xmax: 100
   target: {fileID: 1477176004}
@@ -3778,7 +3778,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2152470720903494237, guid: 4f7dc3d772d4f3d468ae81a9bc78115c, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: CanvasPause
       objectReference: {fileID: 0}
     - target: {fileID: 6885800786792110965, guid: 4f7dc3d772d4f3d468ae81a9bc78115c, type: 3}
       propertyPath: m_Pivot.x
