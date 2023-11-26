@@ -14,24 +14,24 @@ public class PlayerLiquid : PlayerMouvement
         if (isWalled == -1 && !isGrounded)
         {
             rg.velocity = Vector3.zero;
+            animator.SetBool("wallAttach", true);
         }
         else
         {
             base.InputLeft();
         }
-
     }
     public override void InputRight()
     {
         if (isWalled == 1 && !isGrounded)
         {
             rg.velocity = Vector3.zero;
+            animator.SetBool("wallAttach", true);
         }
         else
         {
             base.InputRight();
         }
-
     }
 
 
