@@ -8,6 +8,7 @@ public class IceScript : MonoBehaviour
     [Header("Ice settings")]
     public float ice_temp = -25f;
     public float temp_zone_radius = 4f;
+    public float heat_transfer_rate = 1.5f;
 
     [Header("Animation settings")]
     public float speed = 60f;
@@ -68,7 +69,7 @@ public class IceScript : MonoBehaviour
         if (!is_in_temp_zone && isInTempZone())
         {
             is_in_temp_zone = true;
-            temperature.enterNewTempZone(ice_temp);
+            temperature.enterNewTempZone(ice_temp, heat_transfer_rate);
         }
         else if (is_in_temp_zone && !(isInTempZone()))
         {

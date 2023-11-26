@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thermometerSlider: {fileID: 0}
   RoomTemperatureGauge: {fileID: 0}
+  heatTransferBase: 0.3
   roomTemp: 50
   slimeTemp: 0
   localTemp: 0
-  heatTransferRate: 0.8

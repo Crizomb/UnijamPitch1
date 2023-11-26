@@ -9,6 +9,12 @@ public class PlayerLiquid : PlayerMouvement
     public int wallJumpAngle;
 
 
+    /*public override void InputLeft()
+    {
+
+    }*/
+
+
     public override void InputDown()
     {
        /* if(rg.velocity.y < 0)
