@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour
 
         newPosY = (target.position.y);
 
-        if (target.position.x > xtest && target.position.x < xmax)
+        if (target.position.x > xtest)
             {
                 newPosX = (target.position.x);
             }
