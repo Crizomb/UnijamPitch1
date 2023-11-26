@@ -49,4 +49,4 @@ MonoBehaviour:
   roomTemp: 50
   slimeTemp: 0
   localTemp: 0
-  heatTransferRate: 0.8
+  heatTransferRate: 0.5
