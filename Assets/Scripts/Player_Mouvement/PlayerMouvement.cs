@@ -124,7 +124,7 @@ public abstract class PlayerMouvement : MonoBehaviour
         /*if (Input.GetKeyDown("s"))
             InputDown();*/
 
-        animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isJumping", rg.velocity.y < -0.01f || rg.velocity.y > 0.01f);
         animator.SetFloat("speed", Mathf.Abs(speedTemp));
 
         if(speedTemp < 0){
@@ -142,10 +142,10 @@ public abstract class PlayerMouvement : MonoBehaviour
         }
 
         
-        int yVel = -1;
+        int yVel = 1;
 
-        if (rg.velocity.y > 0)
-            yVel = 1;
+        if (rg.velocity.y < 0)
+            yVel = -1;
 
         animator.SetInteger("verticalDirection", yVel);
 
