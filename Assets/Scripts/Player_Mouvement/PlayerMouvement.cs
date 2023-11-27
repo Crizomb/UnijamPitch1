@@ -87,7 +87,7 @@ public abstract class PlayerMouvement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("z") || Input.GetKeyDown("Space"))
+        if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
         {
             bufferJump = true;
         }
@@ -156,7 +156,7 @@ public abstract class PlayerMouvement : MonoBehaviour
         animator.SetInteger("verticalDirection", yVel);
 
         Vector3 tempPos = transform.position;
-        player.transform.position = transform.position;
+        player.transform.position = tempPos;
         transform.position = tempPos;
 
     }
