@@ -10,7 +10,6 @@ public class VictoryScript : MonoBehaviour
     {
         VictoryPanel.SetActive(true);
         SoundSingleton.Instance.PlayWin();
-        Time.timeScale = 0f;
     }
 
 }

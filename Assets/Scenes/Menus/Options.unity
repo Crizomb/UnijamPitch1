@@ -1596,7 +1596,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1159882935}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1819,7 +1819,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1457326474
 RectTransform:
@@ -1836,15 +1836,15 @@ RectTransform:
   - {fileID: 839660508}
   - {fileID: 1150229413}
   - {fileID: 1159882933}
+  - {fileID: 553366927}
   - {fileID: 689755446}
   - {fileID: 1641306481}
-  - {fileID: 553366927}
+  - {fileID: 628233873}
   - {fileID: 1255229991}
   - {fileID: 2125631585}
-  - {fileID: 628233873}
+  - {fileID: 455264663}
   - {fileID: 646113522}
   - {fileID: 214372883}
-  - {fileID: 455264663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9843138, g: 0.098039225, b: 0.098039225, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
